@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIP | Doctor Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header (reuse SHIP look) -->
+    <header class="ship-header">
+        <div class="logo">
+            <span class="logo-icon">➕</span>
+            <span class="logo-text">SHIP</span>
+        </div>
+        <div class="header-title">Secure Health Intelligence Platform</div>
+        <div class="user-menu">
+            <span class="user-name">Dr. Smith</span>
+            <div class="settings-dropdown">
+                <button class="settings-btn">⚙️</button>
+                <div class="dropdown-content">
+                    <a href="doctor_dashboard.html">Admin Dashboard</a>
+                    <a href="#" id="logout-btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-wrapper">
+        <section class="dashboard-card doctor-view">
+            <h2>Doctor Dashboard</h2>
+            <div class="doctor-container">
+                <div class="sidebar">
+                    <ul class="nav-list">
+                        <li class="active"><span class="icon">🩺</span> Patient Reports</li>
+                        <li><span class="icon">📊</span> AI Analytics</li>
+                        <li><span class="icon">📜</span> Audit</li>
+                    </ul>
+                </div>
+
+                <div class="content-area">
+                    <div class="panel-header">
+                        <h4>All Patients & Reports</h4>
+                        <div>
+                            <button class="btn small" id="refresh-btn">Refresh</button>
+                        </div>
+                    </div>
+
+                    <div class="two-column" style="align-items:flex-start;">
+                        <div class="records-panel" style="flex:0.6;">
+                            <div id="patients-list">
+                                <p class="muted">Loading patients...</p>
+                            </div>
+                        </div>
+
+                        <div class="analysis-panel" style="flex:0.4;">
+                            <div class="panel-header"><h4>AI Analytics Overview</h4></div>
+                            <div id="analytics-overview">
+                                <p class="muted">Loading analytics...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/doctor_dashboard_page.js"></script>
+    <script src="js/dropdown.js"></script>
+</body>
+</html>

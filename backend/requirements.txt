@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+python-jose
+passlib[pbkdf2]
+alembic
+httpx
+pytest
+pytest-asyncio
+mypy
+black
+flake8

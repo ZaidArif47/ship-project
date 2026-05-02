@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIP | Secure Health Intelligence Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="ship-header">
+        <div class="logo">
+            <span class="logo-icon">➕</span>
+            <span class="logo-text">SHIP</span>
+        </div>
+        <div class="header-title">Secure Health Intelligence Platform</div>
+        <div class="user-menu">
+    <span class="user-name">John Doe</span>
+    <div class="settings-dropdown">
+        <button class="settings-btn">⚙️</button>
+        <div class="dropdown-content">
+            <a href="profile.html">Profile</a>
+            <a href="patient_dashboard.html">My Dashboard</a>
+            <a href="#" id="logout-btn">Logout</a>
+        </div>
+    </div>
+</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-wrapper">
+
+        <!-- PATIENT VIEW EXAMPLE -->
+        <section class="dashboard-card patient-view">
+            <h2>Patient Dashboard Preview</h2>
+            <div class="patient-container">
+                <div class="sidebar">
+                    <ul class="nav-list">
+                        <li class="active"><button class="nav-btn" data-target="records-panel"><span class="icon">📋</span> My Records</button></li>
+                        <li><button class="nav-btn" data-target="analysis-panel"><span class="icon">🧠</span> AI Health Analysis</button></li>
+                    </ul>
+                </div>
+
+                <div class="content-area">
+                    <div class="welcome-banner">
+                        <h3>Welcome, John Doe!</h3>
+                    </div>
+
+                    <div class="two-column">
+                        <div id="records-panel" class="records-panel">
+                            <div class="panel-header">
+                                <h4>My Health Records</h4>
+                                <button class="btn small">+ Add New Record</button>
+                            </div>
+                            <table class="records-table">
+                                <thead>
+                                    <tr>
+                                        <th>Report Name</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Blood Test Report</td>
+                                        <td>02/10/2023</td>
+                                        <td>
+                                            <button class="btn tiny">View</button>
+                                            <button class="btn tiny danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>ECG Report</td>
+                                        <td>01/15/2023</td>
+                                        <td>
+                                            <button class="btn tiny">View</button>
+                                            <button class="btn tiny danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cholesterol Report</td>
+                                        <td>12/05/2022</td>
+                                        <td>
+                                            <button class="btn tiny">View</button>
+                                            <button class="btn tiny danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="analysis-panel" class="analysis-panel" style="display:none;">
+                            <div class="panel-header">
+                                <h4>AI Health Analysis Results</h4>
+                            </div>
+                            <div class="risk-item high">
+                                <span class="risk-label">Diabetes Risk: 32% <em>(Moderate)</em></span>
+                            </div>
+                            <div class="risk-item low">
+                                <span class="risk-label">Heart Disease Risk: 15% <em>(Low)</em></span>
+                            </div>
+
+                            <div class="insights">
+                                <h5>General Health Insights</h5>
+                                <p>• BMI: 27.5 (Overweight)</p>
+                                <p>• Blood Pressure: 110/85 mmHg</p>
+                            </div>
+
+                            <div class="recommendations">
+                                <h5>Recommendations</h5>
+                                <ul>
+                                    <li>Maintain a healthy diet.</li>
+                                    <li>Exercise regularly.</li>
+                                    <li>Monitor blood sugar levels.</li>
+                                    <li>Monitor blood pressure.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Check if user is authenticated
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <script src="js/patient_preview.js"></script>
+    <script src="js/dropdown.js"></script>
+</body>
+</html>
